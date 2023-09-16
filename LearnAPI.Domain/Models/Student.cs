@@ -16,6 +16,5 @@ namespace LearnAPI.Domain.Models
         public Project Project { get; set; } = null!;
         public Mentor Mentor { get; set; } = null!;
 
-
     }
 }

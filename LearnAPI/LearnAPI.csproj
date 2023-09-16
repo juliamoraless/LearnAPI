@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LearnAPI.Application\LearnAPI.Application.csproj" />
     <ProjectReference Include="..\LearnAPI.Infra\LearnAPI.Infra.csproj" />
   </ItemGroup>
 
