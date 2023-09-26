@@ -9,6 +9,7 @@ namespace LearnAPI.Domain.Models
     public sealed class Student: BaseEntity
     {
         public string Name { get; set; } = null!;
+        public string Document { get; set; } = null!;
         public Guid ClassroomId { get; set; } 
         public Guid ProjectId { get; set; } 
         public Guid MentorId { get; set; }

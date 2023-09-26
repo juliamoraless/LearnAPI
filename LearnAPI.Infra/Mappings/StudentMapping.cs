@@ -21,6 +21,11 @@ namespace LearnAPI.Infra.Mappings
                 .HasColumnType("varchar")
                 .HasMaxLength(200);
 
+            builder.Property(s => s.Document)
+                .IsRequired()
+                .HasColumnType("varchar")
+                .HasMaxLength(12); 
+
             builder.HasOne(s => s.Classroom)
                 .WithMany(c => c.Students)
                 .HasForeignKey(s => s.ClassroomId);
