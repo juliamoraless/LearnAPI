@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EfCoreDialogsState">
+    <option name="keyValueStorage">
+      <map>
+        <entry key="Common:031c480a-f473-4153-9a97-a1b54ee7af46:dbContext" value="LearnAPI.Infra.LearnContext" />
+        <entry key="Common:ba82c3ac-05f2-436f-845e-5e671f880b12:dbContext" value="LearnAPI.Infra.LearnContext" />
+        <entry key="Common:buildConfiguration" value="Debug" />
+        <entry key="Common:noBuild" value="false" />
+        <entry key="Common:outputFolder" value="Migrations" />
+        <entry key="Common:useDefaultConnection" value="true" />
+      </map>
+    </option>
+  </component>
+</project>
