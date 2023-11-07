@@ -14,8 +14,6 @@ namespace LearnAPI.Infra.Repositories
     public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEntity
     {
         protected readonly LearnContext _context;
-        //protected = tanto o repo quanto quem herdar dele terá acesso ao _context
-
         public Repository(LearnContext context)
         {
             _context = context;
@@ -28,7 +26,7 @@ namespace LearnAPI.Infra.Repositories
 
         public virtual async Task<TEntity?> GetById(Guid id)
         {
-            return await _context.Set<TEntity>().FindAsync(id);
+            return await _context.Set<TEntity>().FirstOrDefaultAsync(e => e.Id == id);
         }
 
         public virtual async Task<List<TEntity>> GetAll(TEntity entity)

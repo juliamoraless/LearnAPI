@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace LearnAPI.Domain.Interfaces.Services
 {
-    public interface IStudentService
+    public interface IStudentService: IDisposable
     {
-        Task Listar();
-        Task Add(Student student);
+        Task Get();
+        Task Post(Student student);
         Task Update(Student student);
         Task Remove(Guid id);
+        
     }
 }

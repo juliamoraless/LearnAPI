@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LearnAPI.Domain.Interfaces.Services
 {
-    internal interface IMentorService
+    public interface IMentorService: IDisposable
     {
     }
 }

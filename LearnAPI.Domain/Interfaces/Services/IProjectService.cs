@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LearnAPI.Domain.Interfaces.Services
 {
-    public interface IProjectService
+    public interface IProjectService: IDisposable
     {
         
     }
