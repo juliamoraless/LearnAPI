@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LearnAPI.Application.Notificator;
 using LearnAPI.Domain.Interfaces.Repositories;
 using LearnAPI.Domain.Interfaces.Services;
 using LearnAPI.Domain.Models;
@@ -10,11 +11,11 @@ using LearnAPI.Domain.Validations;
 
 namespace LearnAPI.Application.Services
 {
-    public class ClassroomService : Service, IClassroomService
+    public class ClassroomService : BaseService, IClassroomService
     {
         private readonly IClassroomRepository _classroomRepository;
 
-        public ClassroomService(IClassroomRepository classroomRepository)
+        public ClassroomService(IClassroomRepository classroomRepository, INotificator notificator) : base(notificator)
         {
             _classroomRepository = classroomRepository;
         }
