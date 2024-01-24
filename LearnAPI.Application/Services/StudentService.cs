@@ -1,7 +1,9 @@
 ﻿
+using AutoMapper;
 using LearnAPI.Application.Notificator;
+using LearnAPI.Application.ViewModels.Student;
 using LearnAPI.Domain.Interfaces.Repositories;
-using LearnAPI.Domain.Interfaces.Services;
+using LearnAPI.Application.Interfaces.Services;
 using LearnAPI.Domain.Models;
 using LearnAPI.Domain.Validations;
 
@@ -10,14 +12,19 @@ namespace LearnAPI.Application.Services
     public class StudentService : BaseService, IStudentService
     {
         private readonly IStudentRepository _studentRepository;
+        private readonly IMapper _mapper;
 
-        public StudentService(IStudentRepository studentRepository, INotificator notificator) : base(notificator)
+        public StudentService(IStudentRepository studentRepository,
+                              IMapper mapper,
+                              INotificator notificator) : base(notificator)
         {
             _studentRepository = studentRepository;
+            _mapper = mapper;
         }
-        public Task Get()
+        public async Task<IEnumerable<StudentListViewModel>> GetStudents()
         {
-            throw new NotImplementedException();
+            //TODO: adicionar notificação caso lista seja nula
+            return _mapper.Map<IEnumerable<StudentListViewModel>>(await _studentRepository.GetStudentClassroom());
         }
         public async Task Post(Student student)
         {

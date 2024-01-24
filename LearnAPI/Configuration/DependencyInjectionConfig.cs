@@ -1,15 +1,18 @@
 ﻿using LearnAPI.Application.Notificator;
 using LearnAPI.Application.Services;
 using LearnAPI.Domain.Interfaces.Repositories;
-using LearnAPI.Domain.Interfaces.Services;
+using LearnAPI.Application.Interfaces.Services;
+using LearnAPI.Infra;
 using LearnAPI.Infra.Repositories;
 
 namespace LearnAPI.Configuration
 {
-    public static class InjecaoDP
+    public static class DependencyInjectionConfig
     {
-        public static void AddRepositories(this IServiceCollection services)
+        public static void ResolveDependencies(this IServiceCollection services)
         {
+            services.AddScoped<LearnContext>();
+
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IClassroomRepository, ClassroomRepository>();
             services.AddScoped<IMentorRepository, MentorRepository>();

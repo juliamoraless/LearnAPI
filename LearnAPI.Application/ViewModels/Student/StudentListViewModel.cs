@@ -10,8 +10,6 @@ namespace LearnAPI.Application.ViewModels.Student
     {
         public string Name { get; set; } = null!;
         public string Classroom { get; set; } = null!;
-        public string Project { get; set; } = null!;
-        public string Mentor { get; set; } = null!;
-
+        
     }
 }

@@ -9,7 +9,7 @@ namespace LearnAPI.Domain.Interfaces.Repositories
 {
     public interface IStudentRepository : IRepository<Student>
     {
-        Task<Student?> GetStudentClassroom(Guid id);
+        Task<IEnumerable<Student?>> GetStudentClassroom();
         Task<IEnumerable<Student>> GetStudentsByMentor(Guid mentorId);
     }
 }

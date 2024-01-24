@@ -21,17 +21,22 @@ namespace LearnAPI.Infra.Repositories
 
         public async Task<IEnumerable<TEntity>> Search(Expression<Func<TEntity, bool>> predicate)
         {
-            return await _context.Set<TEntity>().AsNoTracking().Where(predicate).ToListAsync();
+            return await _context.Set<TEntity>()
+                .AsNoTracking()
+                .Where(predicate)
+                .ToListAsync();
         }
 
         public virtual async Task<TEntity?> GetById(Guid id)
         {
-            return await _context.Set<TEntity>().FirstOrDefaultAsync(e => e.Id == id);
+            return await _context.Set<TEntity>()
+                .FirstOrDefaultAsync(e => e.Id == id);
         }
 
-        public virtual async Task<List<TEntity>> GetAll(TEntity entity)
+        public virtual async Task<IEnumerable<TEntity>> GetAll()
         {
-            return await _context.Set<TEntity>().ToListAsync();
+            return await _context.Set<TEntity>()
+                .ToListAsync();
         }
 
         public virtual async Task Create(TEntity entity)
@@ -48,7 +53,8 @@ namespace LearnAPI.Infra.Repositories
 
         public virtual async Task Delete(TEntity entity)
         {
-            _context.Set<TEntity>().Remove(entity);
+            _context.Set<TEntity>()
+                .Remove(entity);
             await SaveChanges();
         }
 

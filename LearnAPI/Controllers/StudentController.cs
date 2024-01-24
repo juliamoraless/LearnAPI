@@ -1,4 +1,5 @@
 ﻿using LearnAPI.Application.ViewModels.Student;
+using LearnAPI.Application.Interfaces.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,12 +13,17 @@ namespace LearnAPI.Controllers
         //Validacao de modelstate (preenchimento correto das viewmodels)
         //Validacao de operação de negocios
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<StudentListViewModel>>> GetAll()
+        private readonly IStudentService _studentService;
+
+        public StudentController(IStudentService studentService)
         {
-
-
-            return Ok();
+            _studentService = studentService;
+        }
+        
+        [HttpGet("students-list")]
+        public async Task<IEnumerable<StudentListViewModel>> GetAll()
+        {
+           return await _studentService.GetStudents();
         } 
         
     }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LearnAPI.Domain.Models;
 
-namespace LearnAPI.Domain.Interfaces.Services
+namespace LearnAPI.Application.Interfaces.Services
 {
     public interface IClassroomService: IDisposable
     {

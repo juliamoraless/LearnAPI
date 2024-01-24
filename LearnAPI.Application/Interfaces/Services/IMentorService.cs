@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LearnAPI.Domain.Interfaces.Services
+namespace LearnAPI.Application.Interfaces.Services
 {
     public interface IMentorService: IDisposable
     {

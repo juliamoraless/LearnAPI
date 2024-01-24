@@ -12,7 +12,7 @@ namespace LearnAPI.Domain.Interfaces.Repositories
     {
         Task<IEnumerable<TEntity>> Search(Expression<Func<TEntity, bool>> predicate);
         Task<TEntity?> GetById(Guid id);
-        Task<List<TEntity>> GetAll(TEntity entity);
+        Task<IEnumerable<TEntity>> GetAll();
         Task Create(TEntity entity);
         Task Update(TEntity entity);
         Task Delete(TEntity entity);

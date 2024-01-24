@@ -15,13 +15,12 @@ namespace LearnAPI.Infra.Repositories
         {
 
         }
-        public async Task<Student?> GetStudentClassroom(Guid id)
+        public async Task<IEnumerable<Student?>> GetStudentClassroom()
         {
             return await _context.Students
                 .AsNoTracking()
                 .Include(s => s.Classroom)
-                    .ThenInclude(c => c.Name)
-                .FirstOrDefaultAsync(s => s.Id == id);
+                .ToListAsync();
         }
 
         public async Task<IEnumerable<Student>> GetStudentsByMentor(Guid mentorId)

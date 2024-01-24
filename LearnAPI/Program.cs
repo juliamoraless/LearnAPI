@@ -1,3 +1,5 @@
+using System.Reflection;
+using LearnAPI.Application.Profiles;
 using LearnAPI.Configuration;
 using LearnAPI.Infra;
 using Microsoft.EntityFrameworkCore;
@@ -16,13 +18,14 @@ var Configuration = builder.Configuration;
 builder.Services.AddDbContext<LearnContext>(options => 
     options.UseSqlServer(Configuration.GetConnectionString("Default")));
 
-builder.Services.AddScoped<LearnContext>();
-builder.Services.AddRepositories();
+builder.Services.AddAutoMapper(typeof(StudentProfile));
+
+builder.Services.ResolveDependencies();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if ( app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();

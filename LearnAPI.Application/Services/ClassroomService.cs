@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LearnAPI.Application.Notificator;
 using LearnAPI.Domain.Interfaces.Repositories;
-using LearnAPI.Domain.Interfaces.Services;
+using LearnAPI.Application.Interfaces.Services;
 using LearnAPI.Domain.Models;
 using LearnAPI.Domain.Validations;
 
